@@ -1,3 +1,6 @@
+import 'package:app/fixed_cost.dart';
+import 'package:app/labor_cost.dart';
+import 'package:app/materialcost.dart';
 import 'package:flutter/material.dart';
 
 class CostApproval extends StatelessWidget {
@@ -25,7 +28,9 @@ class CostApproval extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> MaterialCost()));
+              },
               child: Container(
                 height: 70,
                 decoration: BoxDecoration(
@@ -33,12 +38,14 @@ class CostApproval extends StatelessWidget {
                   borderRadius: BorderRadius.circular(7),
                 ),
                 child: Center(
+                  
                   child: Text(
                     "Material cost",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
+                      
                     ),
                   ),
                 ),
@@ -49,7 +56,9 @@ class CostApproval extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LaborCost()));
+            },
             child: Container(
               height: 70,
               decoration: BoxDecoration(
@@ -75,7 +84,9 @@ class CostApproval extends StatelessWidget {
           Padding(
              padding: const EdgeInsets.symmetric(vertical: 8.0),
              child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FixedCost()));
+            },
             child: Container(
               height: 70,
               decoration: BoxDecoration(

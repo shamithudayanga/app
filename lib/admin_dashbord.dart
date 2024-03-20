@@ -4,9 +4,16 @@
 
 // import 'dart:html';
 
+// import 'dart:html';
+
+import 'package:app/approval_cost.dart';
+import 'package:app/finesh_jobs.dart';
+import 'package:app/notificationView.dart';
+import 'package:app/working_jobs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class Dashbord extends StatelessWidget {
   @override
@@ -36,7 +43,7 @@ class DashbordHome extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 ListTile(
                   contentPadding: EdgeInsets.symmetric(horizontal: 30),
@@ -68,7 +75,7 @@ class DashbordHome extends StatelessWidget {
           Container(
             color: Theme.of(context).primaryColorLight,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 50),
+              padding: EdgeInsets.symmetric(horizontal: 70),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -79,20 +86,84 @@ class DashbordHome extends StatelessWidget {
                 shrinkWrap: true,
                 crossAxisCount: 2,
                 crossAxisSpacing: 40,
-                mainAxisSpacing: 30,
+                mainAxisSpacing: 50,
                 children: [
-                  itemDashboard('Working Jobs', CupertinoIcons.person_2,
-                      Colors.deepOrangeAccent),
-                  itemDashboard('Approved Cost', CupertinoIcons.money_dollar,
-                      Color.fromARGB(255, 236, 219, 59)),
-                  itemDashboard('Day Close',
-                      CupertinoIcons.calendar_badge_minus, Colors.brown),
-                  itemDashboard(
-                      'finsh Jobs', CupertinoIcons.doc_append, Colors.amber),
-                  itemDashboard(
-                      'Seeting', CupertinoIcons.settings, Colors.grey),
-                  itemDashboard('Notification', CupertinoIcons.bell,
-                      Colors.blueAccent),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WorkingJobs()));
+                    },
+                    child: itemDashboard(
+                      'Working Jobs',
+                      CupertinoIcons.person_2,
+                      Colors.deepOrangeAccent,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CostApproval()));
+                    },
+                    child: itemDashboard(
+                      'Approved Cost',
+                      CupertinoIcons.money_dollar,
+                      Color.fromARGB(255, 236, 219, 59),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CostApproval()));
+                    },
+                    child: itemDashboard(
+                      'Day Close',
+                      CupertinoIcons.calendar_badge_minus,
+                      Colors.brown,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FinshJobs()));
+                    },
+                    child: itemDashboard(
+                      'finsh Jobs',
+                      CupertinoIcons.doc_append,
+                      Colors.amber,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>FinshJobs())); //seting
+                    },
+                    child: itemDashboard(
+                      'Seeting',
+                      CupertinoIcons.settings,
+                      Colors.grey,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Notifications()));
+                    },
+                    child: itemDashboard(
+                      'Notification',
+                      CupertinoIcons.bell,
+                      Colors.blueAccent,
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:app/admin_dashbord.dart';
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget {
@@ -74,7 +75,9 @@ class FormScreenState extends State<FormScreen> {
                 ),
                 SizedBox(height: 60),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Dashbord()));
+                  },
                   child: Container(
                     height: 50,
                     decoration: BoxDecoration(
